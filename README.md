@@ -24,12 +24,15 @@ To install at the system level, add the following to the
 ```
 
 where `rev` is the hash of the desired git commit and `sha256` is the source
-hash which can be gotten for a particular revision with the `nix-prefetch-hash`
-tool:
+hash which can be prefetched for a particular revision from the command-line
+with the `nix-prefetch-git` tool:
 
 ```
 $ nix-prefetch-git --url git://github.com/spearman/nixos-utils.git --rev <revision-hash>
 ```
+
+The `--rev <revision-hash>` argument is optional if you just want to get the
+source hash of the latest revision.
 
 
 ## Usage
