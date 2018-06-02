@@ -16,9 +16,11 @@ else
   oldversion=$(echo $(cat version.nix) | tr -d '"')
   set -x
   mv nixos-utils-$oldversion nixos-utils-$version
+  rm -f nixos-utils-$oldversion.tar.gz
   echo "\"$version\"" > version.nix
   set +x
 fi
 
 set -x
 tar -zcf nixos-utils-$version.tar.gz nixos-utils-$version
+git add nixos-utils-$version.tar.gz nixos-utils-$version
