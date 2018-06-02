@@ -45,6 +45,11 @@ Show the nixpkgs directory (`$ nix-instantiate --find-file nixpkgs`):
 
     $ nixos nixpkgs dir
 
+Full system GC-- deletes all old generations of all user profiles, the root
+profile, and the system profile (`$ sudo nix-collect-garbage -d`):
+
+    $ nixos system gc
+
 List system generations (`$ sudo nix-env -p /nix/var/nix/profiles/system
 --list-generations`):
 
@@ -54,3 +59,7 @@ List system packages (`$ nix-store -q --references /var/run/current-system/sw |
 cut -d'-' -f2-`):
 
     $ nixos system packages
+
+Rebuild system configuration and switch (`$ sudo nixos-rebuild switch`):
+
+    $ nixos system rebuild
