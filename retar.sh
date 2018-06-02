@@ -16,7 +16,7 @@ else
   oldversion=$(echo $(cat version.nix) | tr -d '"')
   set -x
   mv nixos-utils-$oldversion nixos-utils-$version
-  echo "$version" > version.nix
+  echo "\"$version\"" > version.nix
   set +x
 fi
 
